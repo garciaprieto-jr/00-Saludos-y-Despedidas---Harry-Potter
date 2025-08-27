@@ -21,7 +21,7 @@ const questions = [
     },
     {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Adios.mp4',
-        question: 'En la estación de tren, Sirius se despide de Harry con la frase:',
+        question: 'Qué dice Dumbledore para despedirse antes de salir de la casa ',
         options: ['¡Chao!', '¡Adiós!', '¡Hasta luego!', '¡Nos vemos!'],
         correctAnswer: '¡Adiós!'
     },
