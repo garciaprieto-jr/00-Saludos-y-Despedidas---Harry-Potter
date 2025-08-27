@@ -7,36 +7,31 @@ const questions = [
         correctAnswer: '¡Hola!'
 
     },
-    {
-        // Harry y Hagrid en el jardin
+   {
         videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-2.mp4',
         question: 'Cuando visitan la cabaña de Hagrid por la mañana, ¿cómo lo saludan?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Buenos días!', '¡Adiós!'],
         correctAnswer: '¡Buenos días!'
     },
     {
-        // McGonagall saluda a los estudiantes
         videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-3.mp4',
         question: 'La profesora McGonagall ve a Harry y sus amigos por la tarde y les dice:',
         options: ['¡Buenos días!', '¡Hola, estudiantes!', '¡Buenas tardes, estudiantes!', '¡Hasta luego!'],
         correctAnswer: '¡Buenas tardes, estudiantes!'
     },
     {
-        // Harry se despide de Sirius en King's Cross
         videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-4.mp4',
         question: 'En la estación de tren, Sirius se despide de Harry con la frase:',
         options: ['¡Chao!', '¡Adiós!', '¡Hasta luego!', '¡Nos vemos!'],
         correctAnswer: '¡Adiós!'
     },
     {
-        // Harry y Hermione en el baile de Navidad
         videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-5.mp4',
         question: 'Después del Baile de Navidad, ¿qué dice Hermione a Harry para despedirse?',
         options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
         correctAnswer: '¡Hasta luego!'
     },
     {
-        // Despedida informal (Dobby)
         videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-6.mp4',
         question: 'Si Dobby el elfo fuera a despedirse de una forma informal, ¿qué diría?',
         options: ['¡Hola!', '¡Buenos días!', '¡Adiós!', '¡Chao!'],
@@ -53,7 +48,6 @@ const successSound = document.getElementById('success-sound');
 const errorSound = document.getElementById('error-sound');
 const gameContainer = document.querySelector('.game-container');
 
-// Nuevas variables para la pantalla de inicio
 const startScreen = document.getElementById('start-screen');
 const gameContent = document.getElementById('game-content');
 const startButton = document.getElementById('start-button');
@@ -68,9 +62,7 @@ function loadQuestion() {
     }
     
     const currentQuestion = questions[currentQuestionIndex];
-    
     videoPlayer.src = currentQuestion.videoURL;
-    
     questionText.textContent = currentQuestion.question;
     feedbackMessage.textContent = '';
     
@@ -88,15 +80,15 @@ function checkAnswer(selectedIndex) {
     const selectedOption = currentQuestion.options[selectedIndex];
     
     if (selectedOption === currentQuestion.correctAnswer) {
-        // Reproduce el sonido de acierto
+        // Lógica para la respuesta CORRECTA
         gameContainer.classList.add('correct-effect');
         successSound.play();
         
-        // Detiene el sonido después de 3 segundos
+        // Detiene el sonido de acierto después de 2 segundos
         setTimeout(() => {
             successSound.pause();
             successSound.currentTime = 0;
-        }, 3000);
+        }, 2000);
 
         feedbackMessage.textContent = '¡Correcto! ✨ ¡Woooow!';
         
@@ -111,15 +103,15 @@ function checkAnswer(selectedIndex) {
         }, 2000);
 
     } else {
-        // Reproduce el sonido de error
+        // Lógica para la respuesta INCORRECTA
         gameContainer.classList.add('error-effect');
         errorSound.play();
 
-        // Detiene el sonido después de 3 segundos
+        // Detiene el sonido de error después de 2 segundos
         setTimeout(() => {
             errorSound.pause();
             errorSound.currentTime = 0;
-        }, 3000);
+        }, 2000);
         
         feedbackMessage.textContent = '¡Incorrecto! Vuelve a intentarlo. 😥';
 
@@ -129,9 +121,10 @@ function checkAnswer(selectedIndex) {
     }
 }
 
-// Inicia el juego
 startButton.addEventListener('click', () => {
     startScreen.classList.add('hidden');
     gameContent.classList.remove('hidden');
     loadQuestion();
 });
+
+
