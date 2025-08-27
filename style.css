@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: #0e0e1a; /* Color de fallback por si la imagen no carga */
+    background: #0e0e1a;
     color: #e6e6e6;
     display: flex;
     justify-content: center;
@@ -8,36 +8,40 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: center;
-
-    /* Propiedades para la imagen de fondo */
-    background-image: url('https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/fondo.png'); /* ¡Reemplaza con la URL de tu imagen! */
-    background-size: cover; /* Cubre todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll (opcional, pero queda bien) */
+    background-image: url('https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* El resto de tu CSS (game-container, h1, etc.) */
-/* ... */
-
 .game-container {
-    background: #3a3a5e;
+    background: rgba(58, 58, 94, 0.9);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     max-width: 800px;
     width: 90%;
+    /* Asegura el centrado del contenido interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     color: #ffc107;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 10px;
+    font-size: 2.5em;
 }
 
 .description {
     font-style: italic;
     margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #c0c0c0;
 }
 
 .video-container {
@@ -45,6 +49,10 @@ h1 {
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     margin-bottom: 20px;
+    border: 3px solid #ffc107;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .video-container iframe {
@@ -53,14 +61,28 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
+}
+
+.quiz-container {
+    text-align: center;
+    width: 100%;
+}
+
+#question-text {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
     margin-top: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .option-btn {
@@ -73,6 +95,7 @@ h1 {
     cursor: pointer;
     transition: transform 0.2s, background-color 0.2s;
     font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .option-btn:hover {
@@ -89,18 +112,67 @@ h1 {
     font-weight: bold;
     margin-top: 20px;
     min-height: 30px;
+    color: #ffc107;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* Efecto de acierto (aplausos visual) */
+/* Clases para la pantalla de inicio */
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.start-screen h1 {
+    margin-bottom: 15px;
+}
+
+.start-screen p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #c0c0c0;
+}
+
+#start-button {
+    background-color: #ffc107;
+    color: #333;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 2px solid #e0a800;
+}
+
+#start-button:hover {
+    background-color: #e0a800;
+    transform: translateY(-3px);
+}
+
+.game-content {
+    display: block;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Efectos */
 .correct-effect {
-    animation: correct-pulse 0.5s ease-in-out;
+    border: 5px solid #28a745;
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.7);
 }
 
-/* Efecto de error (vibración) */
 .error-effect {
-    animation: shake 0.5s ease-in-out;
+    border: 5px solid #dc3545;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.7);
 }
 
+/* Animaciones */
 @keyframes correct-pulse {
     0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 193, 7, 0.7); }
     50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 193, 7, 1); }
@@ -113,4 +185,27 @@ h1 {
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .game-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    #question-text {
+        font-size: 1.5em;
+    }
+    .option-btn {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+    #start-button {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
 }
