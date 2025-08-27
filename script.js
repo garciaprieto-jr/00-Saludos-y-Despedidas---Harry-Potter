@@ -39,7 +39,7 @@ const questions = [
     },
      {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Buenas Noches.mp4',
-        question: 'Si Dobby el elfo fuera a despedirse de una forma informal, ¿qué diría?',
+        question: '¿Cómo se despide el profesor Lúpin del profesor Snake?',
         options: ['¡Hola!', '¡Buenas noches, Profesor!', '¡Adiós!', '¡Chao!'],
         correctAnswer: '¡Buenas noches, Profesor!'
     }
