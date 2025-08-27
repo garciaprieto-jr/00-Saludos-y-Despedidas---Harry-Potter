@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: #0e0e1a;
+    background: #0e0e1a; /* Color de fallback por si la imagen no carga */
     color: #e6e6e6;
     display: flex;
     justify-content: center;
@@ -8,7 +8,17 @@ body {
     min-height: 100vh;
     margin: 0;
     text-align: center;
+
+    /* Propiedades para la imagen de fondo */
+    background-image: url('https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/fondo.jpg'); /* ¡Reemplaza con la URL de tu imagen! */
+    background-size: cover; /* Cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll (opcional, pero queda bien) */
 }
+
+/* El resto de tu CSS (game-container, h1, etc.) */
+/* ... */
 
 .game-container {
     background: #3a3a5e;
