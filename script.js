@@ -14,10 +14,10 @@ const questions = [
         correctAnswer: '¡Buenos días!'
     },
     {
-        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-3.mp4',
-        question: 'La profesora McGonagall ve a Harry y sus amigos por la tarde y les dice:',
+        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/buenas tardes alumnos.mp4',
+        question: '¿Qué saludo utiliza la profesora Madam Hooch?',
         options: ['¡Buenos días!', '¡Hola, estudiantes!', '¡Buenas tardes, estudiantes!', '¡Hasta luego!'],
-        correctAnswer: '¡Buenas tardes, estudiantes!'
+        correctAnswer: '¡Buenas tardes, alumnos!'
     },
     {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Adios.mp4',
