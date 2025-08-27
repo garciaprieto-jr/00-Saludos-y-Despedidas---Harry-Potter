@@ -8,7 +8,7 @@ const questions = [
 
     },
    {
-        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-2.mp4',
+        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/video-2.mp4',
         question: 'Cuando visitan la cabaña de Hagrid por la mañana, ¿cómo lo saludan?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Buenos días!', '¡Adiós!'],
         correctAnswer: '¡Buenos días!'
@@ -26,7 +26,7 @@ const questions = [
         correctAnswer: '¡Adiós!'
     },
     {
-        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-5.mp4',
+        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/video-5.mp4',
         question: 'Después del Baile de Navidad, ¿qué dice Hermione a Harry para despedirse?',
         options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
         correctAnswer: '¡Hasta luego!'
