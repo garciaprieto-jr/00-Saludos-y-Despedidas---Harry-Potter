@@ -40,8 +40,8 @@ const questions = [
      {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Buenas Noches.mp4',
         question: '¿Cómo se despide el profesor Lúpin del profesor Snake?',
-        options: ['¡Hola!', '¡Buenas noches, Profesor!', '¡Adiós!', '¡Chao!'],
-        correctAnswer: '¡Buenas noches, Profesor!'
+        options: ['¡Hola!', '¡Profesor, buenas noches!', '¡Adiós!', '¡Chao!'],
+        correctAnswer: '¡Profesor, buenas noches!'
     }
 ];
 
