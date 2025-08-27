@@ -10,7 +10,7 @@ body {
     text-align: center;
 
     /* Propiedades para la imagen de fondo */
-    background-image: url('https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/fondo.jpg'); /* ¡Reemplaza con la URL de tu imagen! */
+    background-image: url('https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/fondo.png'); /* ¡Reemplaza con la URL de tu imagen! */
     background-size: cover; /* Cubre todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
