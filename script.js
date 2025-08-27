@@ -1,6 +1,6 @@
 const questions = [
     {
-        // Harry cuando entre a comprar su varita
+        // Harry cuando entra a comprar su varita
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Hola.mp4', 
         question: '¿Qué saludo dice Harry cuándo entra a compar la varita?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Qué tal!', '¡Chao!'],
