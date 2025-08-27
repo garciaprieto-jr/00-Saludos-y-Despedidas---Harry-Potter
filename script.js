@@ -1,10 +1,11 @@
 const questions = [
     {
-        // Harry y Ron se encuentran en el tren
-        videoURL: 'https://www.youtube-nocookie.com/embed/5Wq51a02i9M?autoplay=1&mute=1&controls=0', 
-        question: '¿Qué saludo dice Ron Weasley a Harry Potter al conocerse?',
+        // Harry y Ron se encuentran  con Hagrid
+        videoURL: 'https://drive.google.com/file/d/1T6K3pduST9gHU6pyadGhKkuvDOK-Wp6q/preview?autoplay', 
+        question: '¿Qué saludo dice Harry y Hagrid cuando se cuentran en el tren?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Qué tal!', '¡Chao!'],
         correctAnswer: '¡Hola!'
+
     },
     {
         // Harry y Hagrid en el jardin
