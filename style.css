@@ -39,9 +39,9 @@ h1 {
 .description {
     font-style: italic;
     margin-bottom: 20px;
-    font-size: 1.1em;
+    font-size: 1.5em;
     line-height: 1.6;
-    color: #c0c0c0;
+    color: #ffc107;
 }
 
 .video-container {
