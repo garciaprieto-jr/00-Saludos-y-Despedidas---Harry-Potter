@@ -1,42 +1,42 @@
 const questions = [
     {
-        // Harry y Ron se encuentran  con Hagrid
-        videoURL: 'https://drive.google.com/file/d/1T6K3pduST9gHU6pyadGhKkuvDOK-Wp6q/preview?autoplay', 
-        question: '¿Qué saludo dice Harry y Hagrid cuando se cuentran en el tren?',
+        // Harry y Ron se encuentran en el tren
+        videoURL: 'https://www.youtube-nocookie.com/embed/5Wq51a02i9M?autoplay=1&mute=1&controls=0', 
+        question: '¿Qué saludo dice Ron Weasley a Harry Potter al conocerse?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Qué tal!', '¡Chao!'],
         correctAnswer: '¡Hola!'
     },
     {
         // Harry y Hagrid en el jardin
-        videoURL: 'ENLACE_VIDEO_BUENOS_DIAS',
+        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-2.mp4',
         question: 'Cuando visitan la cabaña de Hagrid por la mañana, ¿cómo lo saludan?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Buenos días!', '¡Adiós!'],
         correctAnswer: '¡Buenos días!'
     },
     {
         // McGonagall saluda a los estudiantes
-        videoURL: 'ENLACE_VIDEO_BUENAS_TARDES',
+        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-3.mp4',
         question: 'La profesora McGonagall ve a Harry y sus amigos por la tarde y les dice:',
         options: ['¡Buenos días!', '¡Hola, estudiantes!', '¡Buenas tardes, estudiantes!', '¡Hasta luego!'],
         correctAnswer: '¡Buenas tardes, estudiantes!'
     },
     {
         // Harry se despide de Sirius en King's Cross
-        videoURL: 'ENLACE_VIDEO_ADIOS',
+        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-4.mp4',
         question: 'En la estación de tren, Sirius se despide de Harry con la frase:',
         options: ['¡Chao!', '¡Adiós!', '¡Hasta luego!', '¡Nos vemos!'],
         correctAnswer: '¡Adiós!'
     },
     {
         // Harry y Hermione en el baile de Navidad
-        videoURL: 'ENLACE_VIDEO_HASTA_LUEGO',
+        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-5.mp4',
         question: 'Después del Baile de Navidad, ¿qué dice Hermione a Harry para despedirse?',
         options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
         correctAnswer: '¡Hasta luego!'
     },
     {
         // Despedida informal (Dobby)
-        videoURL: 'ENLACE_VIDEO_CHAO',
+        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-6.mp4',
         question: 'Si Dobby el elfo fuera a despedirse de una forma informal, ¿qué diría?',
         options: ['¡Hola!', '¡Buenos días!', '¡Adiós!', '¡Chao!'],
         correctAnswer: '¡Chao!'
@@ -51,6 +51,11 @@ const feedbackMessage = document.getElementById('feedback-message');
 const successSound = document.getElementById('success-sound');
 const errorSound = document.getElementById('error-sound');
 const gameContainer = document.querySelector('.game-container');
+
+// Nuevas variables para la pantalla de inicio
+const startScreen = document.getElementById('start-screen');
+const gameContent = document.getElementById('game-content');
+const startButton = document.getElementById('start-button');
 
 function loadQuestion() {
     if (currentQuestionIndex >= questions.length) {
@@ -82,11 +87,11 @@ function checkAnswer(selectedIndex) {
     const selectedOption = currentQuestion.options[selectedIndex];
     
     if (selectedOption === currentQuestion.correctAnswer) {
-        // Acierto
+        // Reproduce el sonido de acierto
         gameContainer.classList.add('correct-effect');
         successSound.play();
         
-        // Detiene el sonido después de 3 segundos para que no sea muy largo
+        // Detiene el sonido después de 3 segundos
         setTimeout(() => {
             successSound.pause();
             successSound.currentTime = 0;
@@ -105,7 +110,7 @@ function checkAnswer(selectedIndex) {
         }, 2000);
 
     } else {
-        // Error
+        // Reproduce el sonido de error
         gameContainer.classList.add('error-effect');
         errorSound.play();
 
@@ -123,4 +128,9 @@ function checkAnswer(selectedIndex) {
     }
 }
 
-window.onload = loadQuestion;
+// Inicia el juego
+startButton.addEventListener('click', () => {
+    startScreen.classList.add('hidden');
+    gameContent.classList.remove('hidden');
+    loadQuestion();
+});
