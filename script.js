@@ -27,7 +27,7 @@ const questions = [
     },
     {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/video-5.mp4',
-        question: 'Después del Baile de Navidad, ¿qué dice Hermione a Harry para despedirse?',
+        question: 'Harry y Ron van a ver a Hermion más tard ¿Como se despiden?',
         options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
         correctAnswer: '¡Hasta luego!'
     },
