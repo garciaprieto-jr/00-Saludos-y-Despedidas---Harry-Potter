@@ -32,7 +32,7 @@ const questions = [
         correctAnswer: '¡Hasta luego!'
     },
     {
-        videoURL: 'https://tu_usuario.github.io/tu_repositorio/video-6.mp4',
+        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/chao.jpg',
         question: 'Si Dobby el elfo fuera a despedirse de una forma informal, ¿qué diría?',
         options: ['¡Hola!', '¡Buenos días!', '¡Adiós!', '¡Chao!'],
         correctAnswer: '¡Chao!'
