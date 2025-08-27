@@ -27,7 +27,7 @@ const questions = [
     },
     {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/hasta luego.png',
-        question: 'Harry y Ron van a ver a Hermion más tard ¿Como se despiden?',
+        question: 'Harry y Ron van a ver a Hermione más tarde ¿Como se despiden?',
         options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
         correctAnswer: '¡Hasta luego!'
     },
