@@ -8,8 +8,8 @@ const questions = [
 
     },
    {
-        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/video-2.mp4',
-        question: 'Cuando visitan la cabaña de Hagrid por la mañana, ¿cómo lo saludan?',
+        videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/buenos dias.mp4',
+        question: '¿Que saludo utilizarias en esta situación?',
         options: ['¡Hola!', '¡Buenas tardes!', '¡Buenos días!', '¡Adiós!'],
         correctAnswer: '¡Buenos días!'
     },
