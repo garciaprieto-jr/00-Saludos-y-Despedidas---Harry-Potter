@@ -19,6 +19,16 @@ const questions = [
             emoji.remove();
         }, 3000); 
     };
+.option-btn.correct {
+    border-color: #4CAF50;
+    animation: pulse-correct 0.5s ease-in-out;
+}
+
+.option-btn.incorrect {
+    border-color: #E53935;
+    animation: shake 0.5s ease-in-out;
+
+}
 
    {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/buenos dias.mp4',
