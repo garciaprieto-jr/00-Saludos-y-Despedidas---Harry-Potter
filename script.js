@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Definición de las preguntas del juego
     const questions = [
         {
             videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Hola.mp4',
@@ -59,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicToggleButton = document.getElementById('music-toggle-btn');
     let isMusicPlaying = false;
 
+    // Lógica para el botón de control de música
     musicToggleButton.addEventListener('click', () => {
         if (isMusicPlaying) {
             backgroundMusic.pause();
@@ -72,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isMusicPlaying = !isMusicPlaying;
     });
 
+    // Función para barajar el array de preguntas
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -79,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Función para cargar la siguiente pregunta
     function loadQuestion() {
         if (currentQuestionIndex >= questions.length) {
             questionText.textContent = '¡Juego Terminado! ¡Eres un gran mago del español!';
@@ -100,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Declara checkAnswer en el ámbito global para que HTML pueda acceder a ella
-    **window.checkAnswer = (selectedIndex) => {**
+    // Función para chequear la respuesta
+    window.checkAnswer = (selectedIndex) => {
         const currentQuestion = questions[currentQuestionIndex];
         const selectedOption = currentQuestion.options[selectedIndex];
         if (selectedOption === currentQuestion.correctAnswer) {
@@ -134,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Event listener para el botón de inicio del juego
     startButton.addEventListener('click', () => {
         startScreen.classList.add('hidden');
         gameContent.classList.remove('hidden');
@@ -141,5 +146,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadQuestion();
     });
 });
-
 
