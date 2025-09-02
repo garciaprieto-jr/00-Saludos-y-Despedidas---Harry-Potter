@@ -1,3 +1,4 @@
+// Constantes y variables existentes
 const questions = [
     {
         // Harry cuando entra a comprar su varita
@@ -53,18 +54,31 @@ const feedbackMessage = document.getElementById('feedback-message');
 const successSound = document.getElementById('success-sound');
 const errorSound = document.getElementById('error-sound');
 const gameContainer = document.querySelector('.game-container');
-
 const startScreen = document.getElementById('start-screen');
 const gameContent = document.getElementById('game-content');
 const startButton = document.getElementById('start-button');
-
+const backgroundMusic = document.getElementById('background-music');
+const musicToggleButton = document.getElementById('music-toggle-btn');
+let isMusicPlaying = false;
+// Lógica para el botón de control de música
+musicToggleButton.addEventListener('click', () => {
+    if (isMusicPlaying) {
+        backgroundMusic.pause();
+        musicToggleButton.textContent = 'Música: OFF';
+    } else {
+        backgroundMusic.play().catch(error => {
+            console.error("Error al intentar reproducir la música:", error);
+        });
+        musicToggleButton.textContent = 'Música: ON';
+    }
+    isMusicPlaying = !isMusicPlaying; // Invertir el estado
+});
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
 function loadQuestion() {
     if (currentQuestionIndex >= questions.length) {
         questionText.textContent = '¡Juego Terminado! ¡Eres un gran mago del español!';
@@ -87,7 +101,6 @@ function loadQuestion() {
         buttons[i].style.backgroundColor = '';
     }
 }
-
 function checkAnswer(selectedIndex) {
     const currentQuestion = questions[currentQuestionIndex];
     const selectedOption = currentQuestion.options[selectedIndex];
@@ -102,24 +115,20 @@ function checkAnswer(selectedIndex) {
             successSound.pause();
             successSound.currentTime = 0;
         }, 2000);
-
         feedbackMessage.textContent = '¡Correcto! ✨ ¡Woooow!';
         
         const buttons = optionsContainer.getElementsByTagName('button');
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].disabled = true;
         }
-
         setTimeout(() => {
             currentQuestionIndex++;
             loadQuestion();
         }, 2000);
-
     } else {
         // Lógica para la respuesta INCORRECTA
         gameContainer.classList.add('error-effect');
         errorSound.play();
-
         // Detiene el sonido de error después de 2 segundos
         setTimeout(() => {
             errorSound.pause();
@@ -127,17 +136,16 @@ function checkAnswer(selectedIndex) {
         }, 2000);
         
         feedbackMessage.textContent = '¡Incorrecto! Vuelve a intentarlo. 😥';
-
         setTimeout(() => {
             gameContainer.classList.remove('error-effect');
         }, 500);
     }
 }
-
 startButton.addEventListener('click', () => {
     startScreen.classList.add('hidden');
     gameContent.classList.remove('hidden');
     loadQuestion();
+});
 });
 
 
