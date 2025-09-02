@@ -8,6 +8,18 @@ const questions = [
         correctAnswer: '¡Hola!'
 
     },
+    // Función para mostrar el emoji de retroalimentación
+    const displayEmoji = (isCorrect) => {
+        const emoji = document.createElement('div');
+        emoji.classList.add('emoji-overlay');
+        emoji.textContent = isCorrect ? '😊' : '😔';
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+            emoji.remove();
+        }, 3000); 
+    };
+
    {
         videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/buenos dias.mp4',
         question: '¿Que saludo utilizarias en esta situación?',
