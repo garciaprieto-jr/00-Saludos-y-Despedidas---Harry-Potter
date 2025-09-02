@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Constantes y variables existentes
     const questions = [
         {
-            // Harry cuando entra a comprar su varita
             videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Hola.mp4',
             question: '¿Qué saludo dice Harry cuándo entra a comprar la varita?',
             options: ['¡Hola!', '¡Buenas tardes!', '¡Qué tal!', '¡Chao!'],
@@ -61,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicToggleButton = document.getElementById('music-toggle-btn');
     let isMusicPlaying = false;
 
-    // 2. Lógica para el botón de control de música
     musicToggleButton.addEventListener('click', () => {
         if (isMusicPlaying) {
             backgroundMusic.pause();
@@ -72,10 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             musicToggleButton.textContent = 'Música: ON';
         }
-        isMusicPlaying = !isMusicPlaying; // Invertir el estado
+        isMusicPlaying = !isMusicPlaying;
     });
 
-    // 3. Funciones del juego
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -91,12 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
             videoPlayer.src = '';
             return;
         }
-
         const currentQuestion = questions[currentQuestionIndex];
         videoPlayer.src = currentQuestion.videoURL;
         questionText.textContent = currentQuestion.question;
         feedbackMessage.textContent = '';
-
         gameContainer.classList.remove('correct-effect', 'error-effect');
         const buttons = optionsContainer.getElementsByTagName('button');
         for (let i = 0; i < buttons.length; i++) {
@@ -106,22 +100,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Lógica para verificar la respuesta
-    window.checkAnswer = (selectedIndex) => {
+    // Declara checkAnswer en el ámbito global para que HTML pueda acceder a ella
+    **window.checkAnswer = (selectedIndex) => {**
         const currentQuestion = questions[currentQuestionIndex];
         const selectedOption = currentQuestion.options[selectedIndex];
-
         if (selectedOption === currentQuestion.correctAnswer) {
-            // Lógica para la respuesta CORRECTA
             gameContainer.classList.add('correct-effect');
             successSound.play();
-
             setTimeout(() => {
                 successSound.pause();
                 successSound.currentTime = 0;
             }, 2000);
             feedbackMessage.textContent = '¡Correcto! ✨ ¡Woooow!';
-
             const buttons = optionsContainer.getElementsByTagName('button');
             for (let i = 0; i < buttons.length; i++) {
                 buttons[i].disabled = true;
@@ -131,29 +121,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadQuestion();
             }, 2000);
         } else {
-            // Lógica para la respuesta INCORRECTA
             gameContainer.classList.add('error-effect');
             errorSound.play();
             setTimeout(() => {
                 errorSound.pause();
                 errorSound.currentTime = 0;
             }, 2000);
-
             feedbackMessage.textContent = '¡Incorrecto! Vuelve a intentarlo. 😥';
             setTimeout(() => {
                 gameContainer.classList.remove('error-effect');
             }, 500);
         }
-    }
+    };
 
-    // 5. Lógica para el botón de inicio del juego
     startButton.addEventListener('click', () => {
         startScreen.classList.add('hidden');
         gameContent.classList.remove('hidden');
-        shuffleArray(questions); // Asegúrate de barajar las preguntas antes de cargar la primera
+        shuffleArray(questions);
         loadQuestion();
     });
-});
 });
 
 
