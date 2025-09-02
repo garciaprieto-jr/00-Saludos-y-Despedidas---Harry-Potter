@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definición de las preguntas del juego
+    // 1. Declaración de constantes y variables
     const questions = [
         {
             videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/Hola.mp4',
@@ -60,21 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const musicToggleButton = document.getElementById('music-toggle-btn');
     let isMusicPlaying = false;
 
-    // Lógica para el botón de control de música
-    musicToggleButton.addEventListener('click', () => {
-        if (isMusicPlaying) {
-            backgroundMusic.pause();
-            musicToggleButton.textContent = 'Música: OFF';
-        } else {
-            backgroundMusic.play().catch(error => {
-                console.error("Error al intentar reproducir la música:", error);
-            });
-            musicToggleButton.textContent = 'Música: ON';
-        }
-        isMusicPlaying = !isMusicPlaying;
-    });
-
-    // Función para barajar el array de preguntas
+    // 2. Funciones del juego
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -82,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Función para cargar la siguiente pregunta
     function loadQuestion() {
         if (currentQuestionIndex >= questions.length) {
             questionText.textContent = '¡Juego Terminado! ¡Eres un gran mago del español!';
@@ -104,7 +89,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Función para chequear la respuesta
+    // 3. Event listeners y lógica de los botones
+    musicToggleButton.addEventListener('click', () => {
+        if (isMusicPlaying) {
+            backgroundMusic.pause();
+            musicToggleButton.textContent = 'Música: OFF';
+        } else {
+            backgroundMusic.play().catch(error => {
+                console.error("Error al intentar reproducir la música:", error);
+            });
+            musicToggleButton.textContent = 'Música: ON';
+        }
+        isMusicPlaying = !isMusicPlaying;
+    });
+
+    startButton.addEventListener('click', () => {
+        startScreen.classList.add('hidden');
+        gameContent.classList.remove('hidden');
+        shuffleArray(questions);
+        loadQuestion();
+    });
+
+    // 4. Hacer la función checkAnswer accesible desde HTML
     window.checkAnswer = (selectedIndex) => {
         const currentQuestion = questions[currentQuestionIndex];
         const selectedOption = currentQuestion.options[selectedIndex];
@@ -137,13 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
     };
-
-    // Event listener para el botón de inicio del juego
-    startButton.addEventListener('click', () => {
-        startScreen.classList.add('hidden');
-        gameContent.classList.remove('hidden');
-        shuffleArray(questions);
-        loadQuestion();
+});
     });
 });
 
