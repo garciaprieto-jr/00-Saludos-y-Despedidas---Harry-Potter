@@ -155,6 +155,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
-    });
-});
-
