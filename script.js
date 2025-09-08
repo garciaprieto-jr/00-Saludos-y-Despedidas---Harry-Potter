@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // NOTA: Un iframe no puede reproducir archivos .png o .jpg.
             // Si deseas mostrar una imagen, necesitarás cambiar la etiqueta de video por <img>
             // en el HTML y modificar la lógica de loadQuestion()
-            imgURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/hasta%20luego.png',
+            videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/hasta%20luego.png',
             question: 'Harry y Ron van a ver a Hermione más tarde ¿Como se despiden?',
             options: ['¡Adiós!', '¡Hasta luego!', '¡Nos vemos!', '¡Chao!'],
             correctAnswer: '¡Hasta luego!'
         },
         {
-            imgURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/chao.jpg',
+            videoURL: 'https://garciaprieto-jr.github.io/00-Saludos-y-Despedidas---Harry-Potter/chao.jpg',
             question: 'Si Dobby el elfo fuera a despedirse de una forma informal, ¿qué diría?',
             options: ['¡Hola!', '¡Buenos días!', '¡Adiós!', '¡Chao!'],
             correctAnswer: '¡Chao!'
